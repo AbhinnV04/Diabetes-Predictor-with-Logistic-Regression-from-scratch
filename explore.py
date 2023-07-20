@@ -34,23 +34,23 @@ def show_explore_page():
     rows, col = df.shape
     st.write(f"""size -> {rows} x {col}""")
     
-    st.write("#### Positive vs. Negative Outcome")
+    st.write("#### Positive and Negative Outcomes")
     p_v_n = plt.figure(figsize=(6,3))
     sns.countplot(x='Outcome', data= df)
     st.pyplot(p_v_n)    
     
-    st.write("#### Outcome and Age -")
+    st.write("#### Outcome and Age")
     age = plt.figure(figsize=(22,8)) 
     sns.countplot(x='Age', hue='Outcome',data=df)
     st.pyplot(age)
     
-    st.write("#### Outcome and BMI -")
+    st.write("#### Outcome and BMI")
     df_bmi = load_bmi()
     bmi = plt.figure(figsize=(22,8)) 
     sns.countplot(x='BMI_category', hue='Outcome', data=df_bmi)
     st.pyplot(bmi)
     
-    st.write("#### BMI with Age")
+    st.write("#### BMI and Age")
     bmi_age = plt.figure(figsize=(12,5))
     sns.boxplot(x='Age', y='BMI', data=df[df['Age']<61])
     st.pyplot(bmi_age)
@@ -64,7 +64,7 @@ def show_explore_page():
     st.write("""
              Obseravations -
 
-            - Younger People (21-30) have more negative results
-            - Overweight individuals have the highest rate of positive diagnosis
-
+            - Younger People (21-30) have more negative results.
+            - Overweight individuals have the highest rate of positive diagnosis.
+            - Glucose has the highest correlation factor thus is the major predictor for the outcome, followed by BMI.
              """)
