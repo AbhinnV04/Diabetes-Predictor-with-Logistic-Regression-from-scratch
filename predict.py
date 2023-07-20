@@ -15,7 +15,7 @@ def predict_page():
     age = st.slider('Age', 0, 100, 50)
     pregnancies = st.slider('Number of Pregnancies', 0, 20, 6)
     bmi = st.slider('BMI', max_value = 60., min_value= 0., value=33.6 ,step=0.10)
-    glucose = st.number_input('Glocuse level(mg/dL)', 0, 300, 148)
+    glucose = st.number_input('Glucose level(mg/dL)', 0, 300, 148)
     blood_pressure = st.number_input('Blood pressure', 0, 150, 72)
     skin_thickness = st.number_input('Skin thickness', 0, 120, 35)
     insulin = st.number_input('Insulin', 0, 850, 0)
